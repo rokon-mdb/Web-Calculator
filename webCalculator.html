@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function display(parameter)
+            {
+                document.getElementById("consol").value += parameter;
+            }
+            function _clear()
+            {
+                var y = document.getElementById("consol").value;
+                var len = y.length;
+                var substr = y.substring(0,len-1);
+                document.getElementById("consol").value = substr;
+            }
+            function clear_all()
+            {
+                document.getElementById("consol").value = "";
+                document.getElementById("result").value = "";
+            }
+            function solution()
+            {
+                var tmp = document.getElementById("consol").value;
+                var ans = eval(tmp);
+                document.getElementById("result").value = ans;
+            }
+        </script>
+        <style>
+            table, th, td {
+                border: 1px solid black
+            }
+            table{
+                padding:5px
+            }
+            input{
+                border: "3";
+                border-color: A59B99;
+                background-color: CDCDCD
+            }
+            .wild{
+                width: 100%;
+            }
+            
+            .bord{
+                border: 2px solid blue;
+                width: 240px;
+                text-align: center;
+                padding: 10px
+            }
+            .ans{
+                text-align: right
+            }
+            .trspace{
+                padding: 10px
+            }
+        
+        </style>
+    </head>
+    <body>
+        <h1 class="bord">Welcome to Web Calculator</h1>
+        <div class="bord">
+        <table>
+            <tr> 
+                <td colspan="3"> <input  type="text" id="consol" placeholder="0"> </td>
+                <td colspan="1"> <input class="wild" type="button" onclick="_clear()" value="C"> </td>
+            </tr>
+            <tr> 
+                <td colspan="3"> <input class="ans" type="text" id="result" placeholder="answer" > </td>
+                <td colspan="1"> <input class=".wild" type="button" onclick="clear_all()" value="AC"> </td>
+            </tr>
+        
+            <tr class="trspace"> 
+                <td> <input class="wild" type="button" onclick="display('1')" value="1"> </td>
+                <td> <input class="wild" type="button" onclick="display('2')" value="2"> </td>
+                <td> <input class="wild" type="button" onclick="display('3')" value="3"> </td>
+                <td> <input class="wild" type="button" onclick="display('/')" value="/"> </td>
+            </tr>
+            <tr> 
+                <td> <input class="wild" type="button" onclick="display('4')" value="4"> </td>
+                <td> <input class="wild" type="button" onclick="display('5')" value="5"> </td>
+                <td> <input class="wild" type="button" onclick="display('6')" value="6"> </td>
+                <td> <input class="wild" type="button" onclick="display('*')" value="*"> </td>
+            </tr>
+            <tr> 
+                <td> <input class="wild" type="button" onclick="display('7')" value="7"> </td>
+                <td> <input class="wild" type="button" onclick="display('8')" value="8"> </td>
+                <td> <input class="wild" type="button" onclick="display('9')" value="9"> </td>
+                <td> <input class="wild" type="button" onclick="display('-')" value="-"> </td>
+            </tr>
+            <tr> 
+                <td> <input class="wild" type="button" onclick="display('0')" value="0"> </td>
+                <td> <input class="wild" type="button" onclick="display('.')" value="."> </td>
+                <td> <input class="wild" type="button" onclick="display('+')" value="+"> </td>
+                <td> <input class="wild" type="button" onclick="solution()" value="="> </td>
+            </tr>
+       
+        
+        <br>
+        
+        </table>
+    </div>
+    </body>
+</html>
